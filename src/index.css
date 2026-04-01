@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Unica+One&family=Outfit:wght@100..900&display=swap');
+@import "tailwindcss";
+
+
+
+
+
+
+@layers base {
+    @font-face {
+        font-family: "baricolage";
+        src: url('/fonts/Bricolage-Grotesque.woff2') format('woff2');
+    }
+    body {
+        font-family: var(--font-outfit);
+    }
+}
+
+
+@theme {
+    --font-unica: "Unica One", sans-serif;
+    --font-baricolage: "baricolage", "Inter", sans-serif;
+    --font-outfit: "Outfit", sans-serif;
+}
