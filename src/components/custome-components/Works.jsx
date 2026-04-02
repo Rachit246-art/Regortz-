@@ -35,7 +35,7 @@ export default function Works() {
     const [selectedProject, setSelectedProject] = useState(null);
 
     return (
-        <section id="works" className="bg-black text-white px-6 md:px-16 lg:px-32 pt-24 pb-32 border-t-2 border-[#AADD00]/40 relative">
+        <section id="works" className="bg-black text-white px-6 md:px-16 lg:px-32 min-h-screen flex flex-col justify-center pt-24 pb-32 border-t-2 border-[#AADD00]/40 relative">
             {/* Section label */}
             <motion.p 
                 initial={{ opacity: 0, x: -10 }}

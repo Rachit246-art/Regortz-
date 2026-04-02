@@ -19,9 +19,8 @@ export default function Hero() {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ duration: 0.6 }}
-                    className="flex items-center gap-3 bg-white/5 border border-white/10 text-[#AADD00] px-4 py-1.5 mb-8 text-xs font-black tracking-[0.2em] uppercase rounded-full backdrop-blur-sm"
+                    className="flex items-center px-4 py-2 mb-8 text-sm md:text-base font-black bg-[#AADD00] text-black shadow-[4px_4px_0_0_white] select-none"
                 >
-                    <span className="w-2 h-2 bg-[#AADD00] rounded-full animate-pulse"></span>
                     Est. 2026 / Creative Labs
                 </motion.div>
 
@@ -100,14 +99,15 @@ export default function Hero() {
             </div>
 
             {/* Marquee Strip Moved to Bottom of Component or Separated */}
-            <div className="absolute bottom-0 left-0 w-full overflow-hidden border-t border-white/5 py-6 bg-black/50 backdrop-blur-sm z-20">
-                <div className="flex gap-12 whitespace-nowrap animate-marquee">
-                    {[1, 2, 3].map((set) => (
-                        <div key={set} className="flex gap-12 items-center">
+            <div className="absolute bottom-0 left-0 w-full overflow-hidden border-t border-white/5 py-5 bg-black z-20 flex">
+                <div className="flex w-max animate-marquee">
+                    {[1, 2].map((set) => (
+                        <div key={set} className="flex items-center">
                             {['Brand Strategy', 'Paid Media', 'Creative Direction', 'Social Campaigns', 'Performance Marketing', 'Visual Identity'].map((item, i) => (
-                                <span key={i} className="flex items-center gap-12 text-white/30 text-[10px] tracking-[0.4em] uppercase font-black hover:text-[#AADD00] transition-colors cursor-default">
-                                    {item} <span className="text-[#AADD00]/40">✦</span>
-                                </span>
+                                <div key={i} className="flex items-center text-[#AADD00] text-[11px] lg:text-[13px] tracking-[0.3em] font-black uppercase whitespace-nowrap cursor-default">
+                                    <span className="mx-8 lg:mx-12">{item}</span>
+                                    <span>✦</span>
+                                </div>
                             ))}
                         </div>
                     ))}
@@ -117,10 +117,11 @@ export default function Hero() {
             <style>{`
                 @keyframes marquee {
                     from { transform: translateX(0); }
-                    to   { transform: translateX(-33.33%); }
+                    to   { transform: translateX(-50%); }
                 }
                 .animate-marquee {
-                    animation: marquee 30s linear infinite;
+                    animation: marquee 25s linear infinite;
+                    will-change: transform;
                 }
                 .animate-marquee:hover {
                     animation-play-state: paused;

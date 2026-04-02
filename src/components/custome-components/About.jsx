@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 
 export default function About() {
     return (
-        <section id="about" className="bg-black text-white relative overflow-hidden pt-16 md:pt-24 pb-0 border-t-2 border-[#AADD00]/40">
+        <section id="about" className="bg-black text-white relative overflow-hidden min-h-screen flex flex-col justify-center pt-16 md:pt-24 pb-16 md:pb-24 border-t-2 border-[#AADD00]/40">
             
             {/* Background Image Accent */}
             <div className="absolute right-0 top-0 w-1/3 h-full opacity-10 pointer-events-none">

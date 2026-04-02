@@ -4,7 +4,7 @@ import Button from './Button'
 
 export default function Contact() {
     return (
-        <section id="contact" className="bg-black text-white px-6 md:px-16 lg:px-32 py-16 lg:py-12 border-t-2 border-[#AADD00]/40 relative overflow-hidden">
+        <section id="contact" className="bg-black text-white px-6 md:px-16 lg:px-32 min-h-screen flex flex-col justify-center py-16 lg:py-12 border-t-2 border-[#AADD00]/40 relative overflow-hidden">
             {/* Background Texture */}
             <div className="absolute inset-0 opacity-10 pointer-events-none">
                 <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(#AADD00 0.5px, transparent 0.5px)', backgroundSize: '40px 40px' }}></div>

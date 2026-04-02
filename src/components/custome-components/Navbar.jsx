@@ -18,17 +18,17 @@ export default function Navbar() {
     }, []);
 
     const navLinks = [
-        { name: 'Home', path: '/' },
-        { name: 'About', path: '/about' },
-        { name: 'Works', path: '/works' },
-        { name: 'Services', path: '/services' }
+        { name: 'HOME', path: '/' },
+        { name: 'ABOUT US', path: '/about' },
+        { name: 'OUR WORKS', path: '/works' },
+        { name: 'OUR SERVICES', path: '/services' }
     ];
 
     return (
         <nav className={`
             fixed top-0 left-0 w-full h-auto flex justify-between items-center 
             px-6 lg:px-32 py-4 z-[100] transition-all duration-500
-            shadow-sm border-b border-zinc-100 bg-white
+            border-b border-[#AADD00] bg-black
         `}>
             {/* Logo Wrapper - Using filters to strip black BG while keeping brand colors */}
             <Link to="/" className="w-[140px] md:w-[160px] flex items-center">
@@ -36,23 +36,23 @@ export default function Navbar() {
                     src={logo}
                     alt="Logo"
                     className="w-full h-auto cursor-pointer"
-                    style={{ filter: 'invert(1) hue-rotate(180deg)' }}
                 />
             </Link>
 
-            {/* DESKTOP MENU - Strong & Global Black Text */}
-            <div className='hidden lg:flex items-center gap-10 font-outfit text-sm font-black text-black'>
+            {/* DESKTOP MENU - Strong & Global White Text */}
+            <div className='hidden lg:flex items-center gap-10 font-outfit text-sm font-medium text-white tracking-widest'>
                 {navLinks.map((link) => (
                     <Link 
                         key={link.name} 
                         to={link.path} 
-                        className={`transition-colors duration-300 relative group text-black`}
+                        className={`transition-colors duration-300 relative group text-white hover:text-[#AADD00]`}
                     >
                         {link.name}
-                        <span className={`absolute -bottom-1 left-0 h-[3px] bg-[#AADD00] transition-all duration-300 ${location.pathname === link.path ? 'w-full' : 'w-0 group-hover:w-full'}`}></span>
                     </Link>
                 ))}
-                <Button variant="primary" size="sm" href="/contact" className="shadow-none">Let's Connect</Button>
+                <Button variant="primary" size="sm" href="/contact" className="ml-4">
+                    LET'S CONNECT
+                </Button>
             </div>
 
             {/* MOBILE HAMBURGER - Darkened for White Background */}
@@ -60,9 +60,9 @@ export default function Navbar() {
                 onClick={() => setIsOpen(!isOpen)}
                 className="lg:hidden flex flex-col justify-center items-end w-8 h-8 gap-[6px] z-[110] focus:outline-none relative"
             >
-                <div className={`h-[2px] bg-black transition-all duration-300 ${isOpen ? 'w-8 rotate-45 translate-y-[8px]' : 'w-8'}`} />
-                <div className={`h-[2px] bg-black transition-all duration-200 ${isOpen ? 'w-0 opacity-0' : 'w-6'}`} />
-                <div className={`h-[2px] bg-black transition-all duration-300 ${isOpen ? 'w-8 -rotate-45 -translate-y-[8px]' : 'w-8'}`} />
+                <div className={`h-[2px] bg-white transition-all duration-300 ${isOpen ? 'w-8 rotate-45 translate-y-[8px]' : 'w-8'}`} />
+                <div className={`h-[2px] bg-white transition-all duration-200 ${isOpen ? 'w-0 opacity-0' : 'w-6'}`} />
+                <div className={`h-[2px] bg-white transition-all duration-300 ${isOpen ? 'w-8 -rotate-45 -translate-y-[8px]' : 'w-8'}`} />
             </button>
 
             {/* MOBILE MENU */}

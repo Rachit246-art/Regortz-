@@ -3,32 +3,31 @@ import { motion } from 'framer-motion'
 
 const VARIANTS = {
     primary: {
-        base: 'bg-[#AADD00] text-black border-[#AADD00]',
-        hover: 'hover:bg-white hover:border-white hover:scale-105',
-        active: 'active:scale-95',
+        base: 'bg-white text-black border-white shadow-[5px_5px_0_0_#AADD00]',
+        hover: 'hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[3px_3px_0_0_#AADD00]',
+        active: 'active:translate-x-[5px] active:translate-y-[5px] active:shadow-none',
     },
     outline: {
-        base: 'bg-transparent text-white border-white/40',
-        hover: 'hover:border-[#AADD00] hover:text-[#AADD00] hover:scale-105',
-        active: 'active:scale-95',
+        base: 'bg-black text-white border-white shadow-[5px_5px_0_0_#AADD00]',
+        hover: 'hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[3px_3px_0_0_#AADD00]',
+        active: 'active:translate-x-[5px] active:translate-y-[5px] active:shadow-none',
     },
     ghost: {
         base: 'bg-transparent text-white/70 border-transparent',
-        hover: 'hover:text-[#AADD00] hover:scale-105',
-        active: 'active:scale-95',
+        hover: 'hover:text-[#AADD00] hover:-translate-y-1',
+        active: 'active:translate-y-0',
     },
     connect: {
-        base: 'bg-white text-black border-white',
-        hover: 'hover:bg-[#AADD00] hover:border-[#AADD00] hover:scale-105',
-        shadow: 'shadow-[0_0_20px_rgba(170,221,0,0.3)]',
-        active: 'active:scale-95',
+        base: 'bg-white text-black border-white shadow-[4px_4px_0_0_#AADD00]',
+        hover: 'hover:translate-x-[2px] hover:translate-y-[2px] hover:shadow-[2px_2px_0_0_#AADD00]',
+        active: 'active:translate-x-[4px] active:translate-y-[4px] active:shadow-none',
     }
 }
 
 const SIZES = {
-    sm: 'px-5 py-2 text-xs tracking-tight font-bold',
-    md: 'px-8 py-3.5 text-sm tracking-tight font-bold',
-    lg: 'px-12 py-5 text-base tracking-tight font-black',
+    sm: 'px-5 py-2 text-xs tracking-widest font-bold',
+    md: 'px-8 py-3.5 text-sm tracking-widest font-black',
+    lg: 'px-12 py-5 text-base tracking-[0.15em] font-black',
 }
 
 export default function Button({
@@ -45,16 +44,14 @@ export default function Button({
 
     const content = (
         <motion.button
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
             onClick={!disabled ? onClick : undefined}
             disabled={disabled}
             className={`
                 inline-flex items-center justify-center gap-3
-                border-[1.5px] rounded-full
-                transition-all duration-300 ease-out
+                border-[2px] rounded-lg
+                transition-all duration-200 ease-out
                 select-none cursor-pointer
-                font-outfit
+                font-outfit uppercase
                 ${v.base} ${v.shadow || ''}
                 ${!disabled ? v.hover : ''}
                 ${s}
