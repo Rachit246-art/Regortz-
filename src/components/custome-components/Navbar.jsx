@@ -55,15 +55,16 @@ export default function Navbar() {
                 </Button>
             </div>
 
-            {/* MOBILE HAMBURGER - Darkened for White Background */}
+            {/* MOBILE HAMBURGER - Matches Mockup Style */}
             <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="lg:hidden flex flex-col justify-center items-end w-8 h-8 gap-[6px] z-[110] focus:outline-none relative"
+                className="lg:hidden flex flex-col justify-center items-end w-8 h-8 gap-[5px] z-[110] focus:outline-none relative"
             >
-                <div className={`h-[2px] bg-white transition-all duration-300 ${isOpen ? 'w-8 rotate-45 translate-y-[8px]' : 'w-8'}`} />
-                <div className={`h-[2px] bg-white transition-all duration-200 ${isOpen ? 'w-0 opacity-0' : 'w-6'}`} />
-                <div className={`h-[2px] bg-white transition-all duration-300 ${isOpen ? 'w-8 -rotate-45 -translate-y-[8px]' : 'w-8'}`} />
+                <div className={`h-[2px] bg-[#AADD00] transition-all duration-300 ${isOpen ? 'w-8 rotate-45 translate-y-[7px]' : 'w-8'}`} />
+                <div className={`h-[2px] bg-[#AADD00] transition-all duration-200 ${isOpen ? 'w-0 opacity-0' : 'w-8'}`} />
+                <div className={`h-[2px] bg-[#AADD00] transition-all duration-300 ${isOpen ? 'w-8 -rotate-45 -translate-y-[7px]' : 'w-8'}`} />
             </button>
+
 
             {/* MOBILE MENU */}
             <AnimatePresence>

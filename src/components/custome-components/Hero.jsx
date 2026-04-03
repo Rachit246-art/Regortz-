@@ -2,38 +2,75 @@ import React from 'react'
 import Button from '../custome-components/Button'
 import { motion } from 'framer-motion'
 import heroImage from '../../assets/hero-image.png'
+import CircularText from './CircularText'
+
 
 export default function Hero() {
     return (
-        <section id="home" className="bg-black min-h-screen w-full flex flex-col lg:flex-row items-center justify-between px-6 lg:px-32 pt-44 pb-12 lg:pt-20 lg:pb-20 gap-16 font-baricolage relative overflow-hidden">
+        <section id="home" className="bg-black min-h-screen w-full flex flex-col lg:flex-row items-center justify-between px-6 lg:px-32 pt-32 pb-12 lg:pt-20 lg:pb-20 gap-16 font-baricolage relative overflow-hidden">
+
             
             {/* Background elements for premium feel */}
             <div className="absolute inset-0 opacity-20 pointer-events-none">
                 <div className="absolute inset-0" style={{ backgroundImage: 'radial-gradient(#AADD00 0.5px, transparent 0.5px)', backgroundSize: '30px 30px' }}></div>
             </div>
             <div className="absolute top-0 right-0 w-1/2 h-1/2 bg-[#AADD00]/5 blur-[120px] rounded-full pointer-events-none"></div>
+            
+
+
+
+
+
+
+
 
             {/* - - - - LEFT CONTENT - - - - */}
             <div className="flex flex-col items-start w-full lg:w-[55%] z-10">
-                <motion.div 
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.6 }}
-                    className="flex items-center px-4 py-2 mb-8 text-sm md:text-base font-black bg-[#AADD00] text-black shadow-[4px_4px_0_0_white] select-none"
-                >
-                    Est. 2026 / Creative Labs
-                </motion.div>
+                <div className="flex items-center justify-between w-full mb-8 lg:mb-12 relative">
+                    <motion.div 
+                        initial={{ opacity: 0, x: -20 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.6 }}
+                        className="flex items-center px-4 py-2 text-sm md:text-base font-black bg-[#AADD00] text-black shadow-[4px_4px_0_0_white] select-none"
+                    >
+                        Est. 2026 / Creative Labs
+                    </motion.div>
+
+                    {/* Circular Moving Text - Positioned exactly as in mockup */}
+                    <div className="lg:hidden flex-shrink-0 ml-4">
+                        <CircularText 
+                            text="* REGORTZ * CREATIVE * LABS "
+                            radius={52}
+                            fontSize="12px"
+                            color="white"
+                            className="opacity-100"
+                        />
+                    </div>
+                </div>
+
+
+
+                {/* ── HEADING ── */}
+
+
+
+
 
                 <motion.h1 
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
-                    className="text-white text-4xl md:text-6xl lg:text-[68px] font-black leading-[0.9] mb-8 tracking-[-0.04em] uppercase"
+                    className="text-white text-[44px] md:text-6xl lg:text-[84px] font-black leading-[0.85] mb-8 tracking-[-0.04em] uppercase font-baricolage"
                 >
-                    <span className="block text-lg md:text-xl lg:text-2xl font-light tracking-[0.3em] text-white/50 mb-3 font-unica">We Make</span>
-                    <span className="text-[#AADD00] block cursor-default">Brands</span>
-                    <span className="block">Hit Different<span className="text-[#AADD00]">.</span></span>
+                    <span className="block mb-2">We Make</span>
+                    <span className="block mb-2">
+                        <span className="text-[#AADD00]">Brands</span> Hit
+                    </span>
+                    <span className="block">
+                        Different<span className="text-[#AADD00] animate-pulse">_</span>
+                    </span>
                 </motion.h1>
+
 
 
 
@@ -65,6 +102,7 @@ export default function Hero() {
                 </motion.div>
             </div>
 
+
             {/* ── RIGHT IMAGE (Desktop) ── */}
             <motion.div 
                 initial={{ opacity: 0, scale: 0.9, rotate: 2 }}
@@ -93,10 +131,11 @@ export default function Hero() {
                 </div>
             </motion.div>
 
-            {/* Mobile Image (Small) */}
-            <div className="lg:hidden w-full aspect-video rounded-xl overflow-hidden border border-white/10 mb-8">
+            {/* ── MOBILE IMAGE ── (Removed as per user request, replaced by text circle in above section) */}
+            {/* <div className="lg:hidden w-full aspect-video rounded-xl overflow-hidden border border-white/10 mb-8">
                 <img src={heroImage} alt="Creative Studio" className="w-full h-full object-cover" />
-            </div>
+            </div> */}
+
 
             {/* Marquee Strip Moved to Bottom of Component or Separated */}
             <div className="absolute bottom-0 left-0 w-full overflow-hidden border-t border-white/5 py-5 bg-black z-20 flex">
