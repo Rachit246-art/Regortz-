@@ -1,8 +1,8 @@
 import React from 'react'
-import Navbar from '../components/custome-components/Navbar'
-import Service from '../components/custome-components/Service'
-import Footer from '../components/custome-components/Footer'
-import WhatsAppButton from '../components/custome-components/WhatsAppButton'
+import Navbar from '../components/custom-components/Navbar'
+import Service from '../components/custom-components/Service'
+import Footer from '../components/custom-components/Footer'
+import WhatsAppButton from '../components/custom-components/WhatsAppButton'
 import { motion } from 'framer-motion'
 
 import ads_bg from '../assets/project-ads.png'

@@ -1,8 +1,8 @@
 import React from 'react'
-import Navbar from '../components/custome-components/Navbar'
-import Works from '../components/custome-components/Works'
-import Footer from '../components/custome-components/Footer'
-import WhatsAppButton from '../components/custome-components/WhatsAppButton'
+import Navbar from '../components/custom-components/Navbar'
+import Works from '../components/custom-components/Works'
+import Footer from '../components/custom-components/Footer'
+import WhatsAppButton from '../components/custom-components/WhatsAppButton'
 import { motion } from 'framer-motion'
 
 import branding_bg from '../assets/project-branding.png'

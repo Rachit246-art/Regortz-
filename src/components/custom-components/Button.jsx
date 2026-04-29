@@ -1,5 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 
 const VARIANTS = {
     primary: {
@@ -38,34 +39,56 @@ export default function Button({
     onClick,
     className = '',
     href,
+    target,
 }) {
     const v = VARIANTS[variant] || VARIANTS.primary
     const s = SIZES[size] || SIZES.md
 
-    const content = (
+    const sharedClasses = `
+        inline-flex items-center justify-center gap-3
+        border-[2px] rounded-lg
+        transition-all duration-200 ease-out
+        select-none cursor-pointer
+        font-outfit uppercase
+        ${v.base} ${v.shadow || ''}
+        ${!disabled ? v.hover : ''}
+        ${s}
+        ${disabled ? 'opacity-40 cursor-not-allowed' : ''}
+        ${className}
+    `
+
+    if (href) {
+        const isInternal = href.startsWith('/') || href.startsWith('#')
+        
+        if (isInternal && !href.startsWith('#')) {
+            return (
+                <Link to={href} className={sharedClasses} onClick={onClick}>
+                    {children}
+                </Link>
+            )
+        }
+
+        return (
+            <a 
+                href={href} 
+                className={sharedClasses} 
+                target={target} 
+                rel={target === '_blank' ? 'noopener noreferrer' : undefined}
+                onClick={onClick}
+            >
+                {children}
+            </a>
+        )
+    }
+
+    return (
         <motion.button
             onClick={!disabled ? onClick : undefined}
             disabled={disabled}
-            className={`
-                inline-flex items-center justify-center gap-3
-                border-[2px] rounded-lg
-                transition-all duration-200 ease-out
-                select-none cursor-pointer
-                font-outfit uppercase
-                ${v.base} ${v.shadow || ''}
-                ${!disabled ? v.hover : ''}
-                ${s}
-                ${disabled ? 'opacity-40 cursor-not-allowed' : ''}
-                ${className}
-            `}
+            className={sharedClasses}
+            whileTap={!disabled ? { scale: 0.98 } : {}}
         >
             {children}
         </motion.button>
     )
-
-    if (href) {
-        return <a href={href}>{content}</a>
-    }
-
-    return content
 }

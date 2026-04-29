@@ -1,5 +1,5 @@
 import React from 'react'
-import Button from '../custome-components/Button'
+import Button from '../custom-components/Button'
 import { motion } from 'framer-motion'
 import heroImage from '../../assets/hero-image.png'
 import CircularText from './CircularText'

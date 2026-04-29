@@ -6,7 +6,7 @@
 
 
 
-@layers base {
+@layer base {
     @font-face {
         font-family: "baricolage";
         src: url('/fonts/Bricolage-Grotesque.woff2') format('woff2');

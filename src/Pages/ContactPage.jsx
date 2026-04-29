@@ -1,8 +1,8 @@
 import React from 'react'
-import Navbar from '../components/custome-components/Navbar'
-import Contact from '../components/custome-components/Contact'
-import Footer from '../components/custome-components/Footer'
-import WhatsAppButton from '../components/custome-components/WhatsAppButton'
+import Navbar from '../components/custom-components/Navbar'
+import Contact from '../components/custom-components/Contact'
+import Footer from '../components/custom-components/Footer'
+import WhatsAppButton from '../components/custom-components/WhatsAppButton'
 import { motion } from 'framer-motion'
 
 import hero_bg from '../assets/hero-image.png'
