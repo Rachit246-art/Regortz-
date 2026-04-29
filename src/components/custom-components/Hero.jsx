@@ -7,7 +7,7 @@ import CircularText from './CircularText'
 
 export default function Hero() {
     return (
-        <section id="home" className="bg-black min-h-screen w-full flex flex-col lg:flex-row items-center justify-between px-6 lg:px-32 pt-32 pb-12 lg:pt-20 lg:pb-20 gap-16 font-baricolage relative overflow-hidden">
+        <section id="home" className="bg-black min-h-screen w-full flex flex-col lg:flex-row items-center justify-between px-6 lg:px-32 pt-20 pb-12 lg:pt-12 lg:pb-20 gap-16 font-baricolage relative overflow-hidden">
 
             
             {/* Background elements for premium feel */}

@@ -9,7 +9,7 @@ import branding_bg from '../assets/project-branding.png'
 
 export default function WorksPage() {
     return (
-        <div className="bg-black text-white min-h-screen pt-16 lg:pt-24">
+        <div className="bg-black text-white min-h-screen pt-12 lg:pt-16">
             <Navbar />
             
             {/* Cinematic Hero Section - Unified Style */}
